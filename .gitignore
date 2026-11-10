@@ -1,12 +1,15 @@
-.vscode/
-.venv/
-*.pyc
-__pycache__/
-.pdm-python
-/.quarto/
-_site/
-# PlatformIO / Zugangsdaten
-.pio/
+# Zugangsdaten
 .env
+**/.env
 
-**/*.quarto_ipynb
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Datenbanken und Messdaten
+*.db
+*.sqlite3
+*.csv
+**/data/

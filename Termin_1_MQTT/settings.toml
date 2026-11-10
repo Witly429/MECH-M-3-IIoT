@@ -1,0 +1,58 @@
+# settings.toml
+
+# ===================================================================
+# IIoT Temperatursensor - Konfigurationsdatei
+# ===================================================================
+
+# --- Geräteeinstellungen ---
+
+device_id = "pico-hvw-resch-jacobs-doleschel-01"
+
+# Nachnamen klein und mit "-" getrennt
+names = "hvw-resch-jacobs-doleschel"
+
+location = "Innsbruck"
+
+
+
+# --- MQTT Broker Einstellungen ---
+
+broker_address = "158.180.44.197"
+broker_port = 1883
+
+
+# --- MQTT Topics ---
+
+telemetry_topic = "iiot/group/hvw-resch-jacobs-doleschel/sensor/temperature/state"
+humidity_topic = "iiot/group/hvw-resch-jacobs-doleschel/sensor/humidity/state"
+
+status_topic = "iiot/group/hvw-resch-jacobs-doleschel/status"
+
+
+# --- Sensor & Applikations-Einstellungen ---
+
+# Intervall in Sekunden
+reading_interval_seconds = 2
+
+# DHT11 Datenpin
+sensor_pin = 22
+
+# Sensorinformationen
+sensor_type = "temperature"
+sensor_unit = "°C"
+
+# MQTT Status
+status_ok = "ok"
+status_error = "error"
+status_offline = "offline"
+
+# MQTT Status-Topic laut AsyncAPI
+status_qos = 1
+status_retain = true
+
+# Last Will
+lwt_qos = 1
+lwt_retain = true
+
+# MQTT Verbindung
+mqtt_keep_alive = 60

@@ -1,0 +1,14 @@
+[mqtt]
+broker_address = "158.180.44.197"
+broker_port = 1883
+keep_alive = 60
+
+telemetry_topic = "iiot/group/+/sensor/+/state"
+status_topic = "iiot/group/+/status"
+
+[storage]
+csv_file = "data/sensor_data.csv"
+database_file = "data/sensor_data.db"
+
+[dashboard]
+port = 8501

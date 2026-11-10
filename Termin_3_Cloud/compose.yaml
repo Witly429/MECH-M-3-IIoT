@@ -1,0 +1,34 @@
+
+services:
+
+  # MQTT-Empfänger
+  mqtt_receiver:
+    build: .
+    command: python mqtt_receiver.py
+
+    env_file:
+      - .env
+
+    volumes:
+      - ./data:/app/data
+
+    restart: unless-stopped
+
+  # Streamlit-Dashboard
+  dashboard:
+    build: .
+    command:
+      - streamlit
+      - run
+      - dashboard.py
+      - --server.address=0.0.0.0
+      - --server.port=8501
+      - --server.headless=true
+
+    ports:
+      - "127.0.0.1:8501:8501"
+
+    volumes:
+      - ./data:/app/data
+
+    restart: unless-stopped
